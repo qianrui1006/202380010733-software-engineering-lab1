@@ -108,6 +108,8 @@ class HJ212Parser:
         keys and malformed fields raise ValueError rather than being discarded.
         """
         frame = cls._split_frame(message)
+        if f"{cls.crc16(frame.data_segment):04X}" != frame.crc_text:
+            raise ValueError("CRC check failed; refusing to parse the data segment")
         segment = frame.data_segment
         cp_match = re.search(r"(?:^|;)CP=&&", segment)
         fields: list[str] = []

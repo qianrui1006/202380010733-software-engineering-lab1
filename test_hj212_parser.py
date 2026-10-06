@@ -52,7 +52,7 @@ class HJ212ParserTests(unittest.TestCase):
 
     def test_crc_invalid_frame_cannot_be_parsed(self):
         message = HJ212Parser.build_message(MONITORING_SEGMENT)
-        wrong_crc = message[:-6] + "0000\\r\\n"
+        wrong_crc = message[:-6] + "0000\r\n"
         with self.assertRaises(ValueError):
             HJ212Parser.parse_data_segment(wrong_crc)
     def test_cp_is_kept_intact_and_outer_fields_are_parsed(self):
