@@ -1,6 +1,6 @@
 # 软件工程实验一：个人编程技能和 Git 操作
 
-本仓库实现 HJ212-2017 单帧解析器，并提交实验报告与自动化回归用例。
+本仓库包含 Hello World 基础程序、HJ212-2017 单帧解析器、实验报告与自动化回归用例。
 
 - 公开仓库：https://github.com/qianrui1006/202380010733-software-engineering-lab1
 - 实验报告：[`docs/202380010733-钱锐-软件工程实验一.docx`](docs/202380010733-钱锐-软件工程实验一.docx)
@@ -9,6 +9,7 @@
 ## 目录
 
 - `hj212_parser.py`：`HJ212Parser` 类、报文构造、CRC、结构化解析和监测因子提取。
+- `hello_world.py`：输出 `Hello World` 的基础 Python 程序。
 - `test_hj212_parser.py`：协议帧、官方 CRC 样例、字段和边界回归用例。
 - `docs/`：按课程模板填写的实验报告。
 
@@ -26,8 +27,11 @@ CRC 使用初值 `0xFFFF`，每字节执行 `(crc >> 8) ^ byte`，随后右移 8
 需要 Python 3.10 或更高版本，不依赖第三方包。
 
 ```bash
+python hello_world.py
 python -m unittest -v
 ```
+
+运行基础程序后应输出 `Hello World`。
 
 验证环境 Python 3.14.3；11 项自动化回归用例全部通过。
 
